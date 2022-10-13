@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+{% block title %}<title>Authors</title>{% endblock %}
+{% block content %}
+  <h1>Author List</h1>
+
+  {% if author_list %}
+ 
+  
+    {% for author in author_list %}
+      
+      	<div class="row">
+  		<div class="col-lg-10 offset-lg-2">
+
+  <div class="card d-lg-flex p-2 shadow-lg p-5 m-10" style="margin-top: 70px; margin-left: 70px;">
+  <div class="card-header">
+   <h2 class="text-center text-warning">{{ author.first_name }} {{author.last_name }}</h2>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center text-danger">Born: {{ author.date_of_birth}} Died: {{author.date_of_death }}</h5>
+    <p class="card-text text-center" >
+    	<button class="btn btn-dark " type="submit">
+    		<a href="{% url 'books' %}">View details</a> 
+    
+    	</button>
+   
+
+      
+  </p>
+    
+  </div>
+</div>
+
+ 
+
+  </div>
+  	</div>
+ 		
+      
+      
+    {% endfor %}
+  
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}       
+{% endblock %}

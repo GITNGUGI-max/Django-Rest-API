@@ -1,0 +1,30 @@
+{% extends 'base_generic.html' %}
+{% block title %}<title>Library</title>{% endblock %}
+{% block content %}
+
+	<h1 class="text-center text-danger" style="margin-top: 70px;">Welcome to Local Library website an online library that is developed by <em>D.M.Ngugi</em></h1>
+	<hr class="my-4">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="card d-lg-flex p-2 shadow-lg p-5 m-10" style="margin-top: 70px; margin-left: 450px;">
+				<div class="card-header">
+					<h2 class="text-center text-success">Dynamic content</h2>
+					</div>
+					<div class="card-body">
+						
+	<p>The Library has the following content</p>
+	<ul>
+		<li><strong>Books:</strong>{{num_books}}</li>
+			<li><strong>Copies:</strong>{{num_instances}}</li>
+				<li><strong>Copies:</strong>{{num_instances_available}}</li>
+					<li><strong>Authors:</strong>{{num_authors}}</li>
+					<li><strong>Genres:</strong>{{num_genre}}</li>
+	</ul>
+	<p>You have visited the library {{num_visits}}{% if num_visits == 1 %}time{% else %} times {% endif %}.</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock%}

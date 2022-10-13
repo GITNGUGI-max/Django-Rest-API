@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %}
+{% block title %}<title>Books</title>{% endblock %}
+{% block content %}
+  <h1>Books In Our Library</h1>
+    {% if book_list %}
+  
+    {% for book in book_list %}
+      
+
+  
+  
+  
+  	<div class="row">
+  		<div class="col-lg-10 offset-lg-2">
+
+  <div class="card d-lg-flex p-2 shadow-lg p-5 m-10" style="margin-top: 70px; margin-left: 70px;">
+  <div class="card-header">
+   <h2 class="text-center text-warning">{{ book.author }}</h2>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center text-danger">{{ book.title }}</h5>
+    <p class="card-text text-center" >
+
+        
+
+      
+  </p>
+    <a href="{{ book.get_absolute_url }}" class="btn btn-dark">view details</a>
+  </div>
+</div>
+
+ 
+
+  </div>
+  	</div>
+ 		
+       {% endfor %}
+ 	
+     
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+  
+{% endblock %}
